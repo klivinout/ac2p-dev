@@ -45,6 +45,34 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'auth'],function () {
 		'as' => 'logout'
 	]);
 
+	Route::group(['prefix' => 'acl'],function () {
+
+		Route::get('/taches/liste',[
+			'uses' => 'AclController@getTasks',
+			'as' => 'gettasks'
+		]);
+
+		Route::group(['prefix' => 'roles'],function () {
+
+			Route::get('/ajouter',[
+				'uses' => 'AclController@newRole',
+				'as' => 'newrole'
+			]);
+
+			Route::post('/ajouter',[
+				'uses' => 'AclController@postNewRole',
+			]);
+
+
+			Route::get('/liste',[
+				'uses' => 'AclController@getRoles',
+				'as' => 'getroles'
+			]);
+
+		});
+
+	});
+
 	Route::group(['prefix' => 'profile'],function () {
 
 		Route::get('/imageprofile',[

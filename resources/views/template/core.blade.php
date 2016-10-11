@@ -1,6 +1,6 @@
 @include('template.phpFunctions')
 
-    	@include('template.header')
+@include('template.header')
 
         
         <div class="row wrapper border-bottom white-bg page-heading">

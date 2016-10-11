@@ -12,4 +12,7 @@
 
     <link href="{{asset('assets/css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+
+    @yield('dependenciesCss')
+
 </head>
